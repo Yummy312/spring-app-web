@@ -10,11 +10,11 @@ public class App {
         MusicPlayer firstmusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
         MusicPlayer secondmusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
 
+        // область видимости бина prototype означает, что при каждом запросе (через метод getBean(), внедрение зависимости и т.д.)
+        // будет создаваться новый экземпляр этого бина, в отличие от области видимости singleton
+        System.out.println(firstmusicPlayer.toString()); // com.nurzhigit.spring_app_web.MusicPlayer@7c9d8e2
+        System.out.println(secondmusicPlayer.toString()); // com.nurzhigit.spring_app_web.MusicPlayer@20d525
 
-        System.out.println(firstmusicPlayer.toString()); // com.nurzhigit.spring_app_web.MusicPlayer@4988d8b8
-        System.out.println(secondmusicPlayer.toString()); // com.nurzhigit.spring_app_web.MusicPlayer@4988d8b8
-        // В Spring бины по умолчанию создаются с областью видимости (scope) как singleton, что означает,
-        // что для каждого бина создается только один экземпляр на весь контекст приложения.
 
         context.close();
     };

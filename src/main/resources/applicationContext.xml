@@ -13,7 +13,9 @@
     </bean>
 
     <bean id="musicPlayer"
-          class="com.nurzhigit.spring_app_web.MusicPlayer">
+          class="com.nurzhigit.spring_app_web.MusicPlayer"
+          scope="prototype"
+    >
           <property name="music" ref="musicBean"/>
 
           <property name="name" value="${musicPlayer.name}"/>
