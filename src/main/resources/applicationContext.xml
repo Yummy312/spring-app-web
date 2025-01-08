@@ -9,18 +9,22 @@
 
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
     <bean id="musicBean"
-          class="com.nurzhigit.spring_app_web.ClassicalMusic">
-    </bean>
-
-    <bean id="musicPlayer"
-          class="com.nurzhigit.spring_app_web.MusicPlayer"
-          scope="prototype"
+          class="com.nurzhigit.spring_app_web.ClassicalMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"
     >
-          <property name="music" ref="musicBean"/>
 
-          <property name="name" value="${musicPlayer.name}"/>
-          <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
+
+<!--    <bean id="musicPlayer"-->
+<!--          class="com.nurzhigit.spring_app_web.MusicPlayer"-->
+<!--          scope="prototype"-->
+<!--    >-->
+<!--          <property name="music" ref="musicBean"/>-->
+
+<!--          <property name="name" value="${musicPlayer.name}"/>-->
+<!--          <property name="volume" value="${musicPlayer.volume}"/>-->
+<!--    </bean>-->
 
 
 
