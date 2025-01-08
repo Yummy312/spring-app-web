@@ -1,16 +1,19 @@
 package com.nurzhigit.spring_app_web;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class MusicPlayer {
-
     @Autowired
-    private ClassicalMusic classicalmusic;
+    @Qualifier("classicalMusic")
+    private Music music;
+
 
     public void playMusic(){
-        System.out.println("Playing: " + classicalmusic.getSong());
+        System.out.println("Playing: " + music.getSong());
+
     }
 
 
