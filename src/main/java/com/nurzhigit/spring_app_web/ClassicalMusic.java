@@ -1,22 +1,19 @@
 package com.nurzhigit.spring_app_web;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ClassicalMusic implements Music {
-
-    private ClassicalMusic(){}
-
-    public static ClassicalMusic getClassicalMusic(){
-        return new ClassicalMusic();
-    }
-
+    @PostConstruct
     public void doMyInit(){
-        System.out.println("Doing my initialization");
+        System.out.println("Doing my initialization...");
     }
 
-    public  void doMyDestroy(){
-        System.out.println("Doing my destruction");
+    @PreDestroy
+    public void doMyDestroy(){
+        System.out.println("Doing my destruction...");
     }
 
     @Override
