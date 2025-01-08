@@ -8,8 +8,8 @@ public class App {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("ApplicationContext.xml");
 
         MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-        musicPlayer.playMusic();
-
+        System.out.println(musicPlayer.getName()); // Maxim
+        System.out.println(musicPlayer.getVolume()); // 70
 
 
         context.close();
